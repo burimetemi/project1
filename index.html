@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+   
+   function computerPlay()
+   {
+       let textArrau=[
+           "rock", "paper", "scissors"
+       ]
+       let chooser=Math.floor(Math.random()*textArrau.length);
+       return textArrau[chooser];
+   }
+   function userPlay()
+   {
+       let y=prompt("Please enter rock, paper, or scissors");
+       let z=y.toLowerCase();
+        return z;
+   }
+
+   
+   
+ 
+
+  let user=0;
+   let pc=0;
+   function round(playerselection,computerselection)
+   {
+    
+    if(playerselection=="rock"&&computerselection=="scissors")
+    {
+        user++
+    }
+    else 
+    if(playerselection=="rock"&&computerselection=="paper")
+    {
+        pc++
+    }
+    else
+    if(playerselection=="paper"&&computerselection=="scissors")
+    {
+         pc++
+    }
+    else
+    if(playerselection=="paper"&&computerselection=="rock")
+    {
+        user++
+    }
+    else
+    if(playerselection=="scissors"&&computerselection=="rock")
+    {
+         pc++
+    }
+    else
+    if(playerselection=="scissors"&&computerselection=="paper")
+    {
+         user++
+    }
+    else
+    if(playerselection==computerselection)
+    {
+        pc++
+        user++
+    }
+   }
+   for(let i=0;i<5;i++)
+   {
+       let five=userPlay();
+       let ten=computerPlay();
+       alert("User chose "+five+" computer chose "+ten);
+       round(five,ten);
+       
+   }
+   if(user>pc)
+   {
+       alert("You won the game with a score of: "+user+ " : "+ pc);
+   }
+   else
+   if(user==pc)
+   {
+    alert("Its a tie with a score of: "+user+ " : "+ pc);
+   }
+   else
+   {
+    alert("You lost the game with a score of: "+user+ " : "+ pc);
+   }
+   
+
+
+</script>
+
+    
+
+
+
+
+
+
+
+
+</body>
+
+
+
+</html>
