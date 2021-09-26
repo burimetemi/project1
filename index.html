@@ -5,10 +5,74 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+   <div class="content">
+       <div class="subcontent1">
+    <img src="2.png" width="250px" height="300px">
+    <br>
+    <div class="buttons5">
+    <button id="btnrock" value="rock">Rock</button>
+    <button id="btnpaper" value="paper">Paper</button>
+    <button id="btnscissors" value="scissors">Scissors</button>
+    </div>
+</div>
 
+<div class="subcontent2">
+    <img src="1.jpg" width="250px" height="300px">
+    <br>
+    <div class="buttons5">
+    <button id="btnrock2" value="rock">Rock</button>
+    <button id="btnpaper2" value="paper">Paper</button>
+    <button id="btnscissors2" value="scissors">Scissors</button>
+    </div>
+
+</div></div>
+
+<br><br><br>
+<div class="thetotalscore">
+    <button style="width: 100px; height: 48px;" id="btnuserscore" value="0">0</button>
+    <button style="width: 100px; height: 48px;" id="btnpcscore" value="0">0</button>
+    </div>
+        
+    
+    
 <script>
+    
+document.getElementById("btnrock").addEventListener("click",function()
+{
+    let x=document.getElementById("btnrock").value;
+    let five=x;
+       let ten=computerPlay();
+       alert("User chose "+five+" computer chose "+ten);
+       round(five,ten);
+       
+})
+document.getElementById("btnpaper").addEventListener("click",function()
+{
+    let x=document.getElementById("btnpaper").value;
+    let five=x;
+       let ten=computerPlay();
+       alert("User chose "+five+" computer chose "+ten);
+       round(five,ten);
+       
+})
+document.getElementById("btnscissors").addEventListener("click",function()
+{
+    let x=document.getElementById("btnscissors").value;
+    let five=x;
+       let ten=computerPlay();
+       alert("User chose "+five+" computer chose "+ten);
+       round(five,ten);
+       
+})
+
+
+
+
+
+
    
    function computerPlay()
    {
@@ -18,19 +82,21 @@
        let chooser=Math.floor(Math.random()*textArrau.length);
        return textArrau[chooser];
    }
+   /*
    function userPlay()
    {
        let y=prompt("Please enter rock, paper, or scissors");
        let z=y.toLowerCase();
         return z;
    }
-
+*/
    
    
  
 
   let user=0;
    let pc=0;
+   
    function round(playerselection,computerselection)
    {
     
@@ -69,7 +135,40 @@
         pc++
         user++
     }
+    document.getElementById("btnuserscore").value=user;
+    document.getElementById("btnuserscore").innerHTML=user;
+    document.getElementById("btnpcscore").value=pc;
+    document.getElementById("btnpcscore").innerHTML=pc;
+    
+    let para=document.getElementById("btnuserscore").value=user;
+    let dyta=document.getElementById("btnpcscore").value=pc;
+
+    if(para==5||dyta==5)
+    {
+        if(para==5&&dyta<5)
+        {
+            alert("You won the game with a score of: "+user+ " : "+ pc);
+        }
+        else
+        if(para<5&&dyta==5)
+        {
+            alert("You lost the game with a score of: "+user+ " : "+ pc);
+        }
+        else
+        if(para==5&&dyta==5)
+        {
+            alert("Its a tie with a score of: "+user+ " : "+ pc);
+        }
+        alert("The game is over");
+        document.getElementById("btnuserscore").value=0;
+    document.getElementById("btnuserscore").innerHTML=0;
+    document.getElementById("btnpcscore").value=0;
+    document.getElementById("btnpcscore").innerHTML=0;
+    }
+    
+
    }
+   /*
    for(let i=0;i<5;i++)
    {
        let five=userPlay();
@@ -78,6 +177,9 @@
        round(five,ten);
        
    }
+   */
+
+   /*
    if(user>pc)
    {
        alert("You won the game with a score of: "+user+ " : "+ pc);
@@ -91,16 +193,12 @@
    {
     alert("You lost the game with a score of: "+user+ " : "+ pc);
    }
-   
+   */
 
 
 </script>
 
     
-
-
-
-
 
 
 

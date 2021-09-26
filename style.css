@@ -1,0 +1,22 @@
+.content
+{
+    display: flex;
+    justify-content: space-around;
+
+}
+img
+{
+    display: block;
+}
+.buttons5
+{
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+.thetotalscore
+{
+    display: flex;
+    justify-content: space-around;
+   
+}
